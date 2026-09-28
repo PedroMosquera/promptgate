@@ -1,0 +1,108 @@
+{
+  "summary": {
+    "id": "sess-truncated",
+    "status": "unknown",
+    "started_at": "2026-09-20T10:15:00Z",
+    "duration_ms": 6900,
+    "input_tokens": 1000,
+    "output_tokens": 80,
+    "cache_read_input_tokens": 0,
+    "event_count": 10
+  },
+  "events": [
+    {
+      "type": "llm.request.started",
+      "ts": "2026-09-20T10:15:00Z",
+      "harness_seq": 1,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true
+    },
+    {
+      "type": "llm.request.completed",
+      "ts": "2026-09-20T10:15:01.500000Z",
+      "harness_seq": 2,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true,
+      "latency_ms": 1500,
+      "retries_attempted": 0
+    },
+    {
+      "type": "llm.usage",
+      "ts": "2026-09-20T10:15:01.501000Z",
+      "harness_seq": 3,
+      "model": "claude-sonnet-4-6",
+      "input_tokens": 480,
+      "output_tokens": 39,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "latency_ms": 1500
+    },
+    {
+      "type": "tool.call",
+      "ts": "2026-09-20T10:15:02Z",
+      "harness_seq": 4,
+      "tool": "read_file",
+      "input": "cmd/promptgate/main.go",
+      "tool_call_id": "call_500"
+    },
+    {
+      "type": "tool.result",
+      "ts": "2026-09-20T10:15:02.260000Z",
+      "harness_seq": 5,
+      "tool": "read_file",
+      "output": "package main\n...",
+      "duration_ms": 260,
+      "tool_call_id": "call_500",
+      "retries_attempted": 0
+    },
+    {
+      "type": "llm.request.started",
+      "ts": "2026-09-20T10:15:03Z",
+      "harness_seq": 6,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true
+    },
+    {
+      "type": "llm.request.completed",
+      "ts": "2026-09-20T10:15:04.600000Z",
+      "harness_seq": 7,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true,
+      "latency_ms": 1600,
+      "retries_attempted": 0
+    },
+    {
+      "type": "llm.usage",
+      "ts": "2026-09-20T10:15:04.601000Z",
+      "harness_seq": 8,
+      "model": "claude-sonnet-4-6",
+      "input_tokens": 520,
+      "output_tokens": 41,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "latency_ms": 1600
+    },
+    {
+      "type": "tool.call",
+      "ts": "2026-09-20T10:15:05Z",
+      "harness_seq": 9,
+      "tool": "exec_cli",
+      "input": "go build ./...",
+      "tool_call_id": "call_501"
+    },
+    {
+      "type": "tool.result",
+      "ts": "2026-09-20T10:15:06.900000Z",
+      "harness_seq": 10,
+      "tool": "exec_cli",
+      "output": "",
+      "duration_ms": 1900,
+      "tool_call_id": "call_501",
+      "retries_attempted": 0
+    }
+  ]
+}

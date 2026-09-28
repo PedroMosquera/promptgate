@@ -1,0 +1,31 @@
+{"type": "llm.request.started", "ts": "2026-09-20T09:08:20Z", "harness_seq": 1, "provider": "anthropic", "model": "claude-sonnet-4-6", "is_stream": true}
+{"type": "llm.request.completed", "ts": "2026-09-20T09:08:21.600000Z", "harness_seq": 2, "provider": "anthropic", "model": "claude-sonnet-4-6", "is_stream": true, "latency_ms": 1600, "retries_attempted": 0}
+{"type": "llm.usage", "ts": "2026-09-20T09:08:21.601000Z", "harness_seq": 3, "model": "claude-sonnet-4-6", "input_tokens": 1400, "output_tokens": 90, "cache_read_input_tokens": 1385, "cache_creation_input_tokens": 0, "latency_ms": 1600}
+{"type": "tool.call", "ts": "2026-09-20T09:08:23Z", "harness_seq": 4, "tool": "read_file", "input": "internal/module_0.go", "tool_call_id": "call_100"}
+{"type": "tool.result", "ts": "2026-09-20T09:08:23.180000Z", "harness_seq": 5, "tool": "read_file", "output": "package module_0\n...", "duration_ms": 180, "tool_call_id": "call_100", "retries_attempted": 0}
+{"type": "llm.request.started", "ts": "2026-09-20T09:08:24Z", "harness_seq": 6, "provider": "anthropic", "model": "claude-sonnet-4-6", "is_stream": true}
+{"type": "llm.request.completed", "ts": "2026-09-20T09:08:25.600000Z", "harness_seq": 7, "provider": "anthropic", "model": "claude-sonnet-4-6", "is_stream": true, "latency_ms": 1600, "retries_attempted": 0}
+{"type": "llm.usage", "ts": "2026-09-20T09:08:25.601000Z", "harness_seq": 8, "model": "claude-sonnet-4-6", "input_tokens": 1400, "output_tokens": 90, "cache_read_input_tokens": 1385, "cache_creation_input_tokens": 0, "latency_ms": 1600}
+{"type": "tool.call", "ts": "2026-09-20T09:08:27Z", "harness_seq": 9, "tool": "read_file", "input": "internal/module_1.go", "tool_call_id": "call_101"}
+{"type": "tool.result", "ts": "2026-09-20T09:08:27.180000Z", "harness_seq": 10, "tool": "read_file", "output": "package module_1\n...", "duration_ms": 180, "tool_call_id": "call_101", "retries_attempted": 0}
+{"type": "llm.request.started", "ts": "2026-09-20T09:08:28Z", "harness_seq": 11, "provider": "anthropic", "model": "claude-sonnet-4-6", "is_stream": true}
+{"type": "llm.request.completed", "ts": "2026-09-20T09:08:29.600000Z", "harness_seq": 12, "provider": "anthropic", "model": "claude-sonnet-4-6", "is_stream": true, "latency_ms": 1600, "retries_attempted": 0}
+{"type": "llm.usage", "ts": "2026-09-20T09:08:29.601000Z", "harness_seq": 13, "model": "claude-sonnet-4-6", "input_tokens": 1400, "output_tokens": 90, "cache_read_input_tokens": 1385, "cache_creation_input_tokens": 0, "latency_ms": 1600}
+{"type": "tool.call", "ts": "2026-09-20T09:08:31Z", "harness_seq": 14, "tool": "read_file", "input": "internal/module_2.go", "tool_call_id": "call_102"}
+{"type": "tool.result", "ts": "2026-09-20T09:08:31.180000Z", "harness_seq": 15, "tool": "read_file", "output": "package module_2\n...", "duration_ms": 180, "tool_call_id": "call_102", "retries_attempted": 0}
+{"type": "llm.request.started", "ts": "2026-09-20T09:08:32Z", "harness_seq": 16, "provider": "anthropic", "model": "claude-sonnet-4-6", "is_stream": true}
+{"type": "llm.request.completed", "ts": "2026-09-20T09:08:33.600000Z", "harness_seq": 17, "provider": "anthropic", "model": "claude-sonnet-4-6", "is_stream": true, "latency_ms": 1600, "retries_attempted": 0}
+{"type": "llm.usage", "ts": "2026-09-20T09:08:33.601000Z", "harness_seq": 18, "model": "claude-sonnet-4-6", "input_tokens": 1400, "output_tokens": 90, "cache_read_input_tokens": 1385, "cache_creation_input_tokens": 0, "latency_ms": 1600}
+{"type": "tool.call", "ts": "2026-09-20T09:08:35Z", "harness_seq": 19, "tool": "read_file", "input": "internal/module_3.go", "tool_call_id": "call_103"}
+{"type": "tool.result", "ts": "2026-09-20T09:08:35.180000Z", "harness_seq": 20, "tool": "read_file", "output": "package module_3\n...", "duration_ms": 180, "tool_call_id": "call_103", "retries_attempted": 0}
+{"type": "llm.request.started", "ts": "2026-09-20T09:08:36Z", "harness_seq": 21, "provider": "anthropic", "model": "claude-sonnet-4-6", "is_stream": true}
+{"type": "llm.request.completed", "ts": "2026-09-20T09:08:37.600000Z", "harness_seq": 22, "provider": "anthropic", "model": "claude-sonnet-4-6", "is_stream": true, "latency_ms": 1600, "retries_attempted": 0}
+{"type": "llm.usage", "ts": "2026-09-20T09:08:37.601000Z", "harness_seq": 23, "model": "claude-sonnet-4-6", "input_tokens": 1400, "output_tokens": 90, "cache_read_input_tokens": 1385, "cache_creation_input_tokens": 0, "latency_ms": 1600}
+{"type": "tool.call", "ts": "2026-09-20T09:08:39Z", "harness_seq": 24, "tool": "read_file", "input": "internal/module_4.go", "tool_call_id": "call_104"}
+{"type": "tool.result", "ts": "2026-09-20T09:08:39.180000Z", "harness_seq": 25, "tool": "read_file", "output": "package module_4\n...", "duration_ms": 180, "tool_call_id": "call_104", "retries_attempted": 0}
+{"type": "llm.request.started", "ts": "2026-09-20T09:08:40Z", "harness_seq": 26, "provider": "anthropic", "model": "claude-sonnet-4-6", "is_stream": true}
+{"type": "llm.request.completed", "ts": "2026-09-20T09:08:41.600000Z", "harness_seq": 27, "provider": "anthropic", "model": "claude-sonnet-4-6", "is_stream": true, "latency_ms": 1600, "retries_attempted": 0}
+{"type": "llm.usage", "ts": "2026-09-20T09:08:41.601000Z", "harness_seq": 28, "model": "claude-sonnet-4-6", "input_tokens": 1400, "output_tokens": 90, "cache_read_input_tokens": 1385, "cache_creation_input_tokens": 0, "latency_ms": 1600}
+{"type": "tool.call", "ts": "2026-09-20T09:08:43Z", "harness_seq": 29, "tool": "read_file", "input": "internal/module_5.go", "tool_call_id": "call_105"}
+{"type": "tool.result", "ts": "2026-09-20T09:08:43.180000Z", "harness_seq": 30, "tool": "read_file", "output": "package module_5\n...", "duration_ms": 180, "tool_call_id": "call_105", "retries_attempted": 0}
+{"type": "task.completed", "ts": "2026-09-20T09:08:44Z", "harness_seq": 31, "status": "completed"}

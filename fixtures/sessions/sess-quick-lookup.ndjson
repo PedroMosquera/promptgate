@@ -1,0 +1,11 @@
+{"type": "llm.request.started", "ts": "2026-09-20T09:00:00Z", "harness_seq": 1, "provider": "anthropic", "model": "claude-sonnet-4-6", "is_stream": true}
+{"type": "llm.request.completed", "ts": "2026-09-20T09:00:01.800000Z", "harness_seq": 2, "provider": "anthropic", "model": "claude-sonnet-4-6", "is_stream": true, "latency_ms": 1800, "retries_attempted": 0}
+{"type": "llm.usage", "ts": "2026-09-20T09:00:01.801000Z", "harness_seq": 3, "model": "claude-sonnet-4-6", "input_tokens": 620, "output_tokens": 45, "cache_read_input_tokens": 0, "cache_creation_input_tokens": 0, "latency_ms": 1800}
+{"type": "tool.call", "ts": "2026-09-20T09:00:02.500000Z", "harness_seq": 4, "tool": "read_file", "input": "internal/gateway/handler.go", "tool_call_id": "call_001"}
+{"type": "tool.result", "ts": "2026-09-20T09:00:02.840000Z", "harness_seq": 5, "tool": "read_file", "output": "package gateway\n...", "duration_ms": 340, "tool_call_id": "call_001", "retries_attempted": 0}
+{"type": "llm.request.started", "ts": "2026-09-20T09:00:03.500000Z", "harness_seq": 6, "provider": "anthropic", "model": "claude-sonnet-4-6", "is_stream": true}
+{"type": "llm.request.completed", "ts": "2026-09-20T09:00:05.600000Z", "harness_seq": 7, "provider": "anthropic", "model": "claude-sonnet-4-6", "is_stream": true, "latency_ms": 2100, "retries_attempted": 0}
+{"type": "llm.usage", "ts": "2026-09-20T09:00:05.601000Z", "harness_seq": 8, "model": "claude-sonnet-4-6", "input_tokens": 890, "output_tokens": 60, "cache_read_input_tokens": 0, "cache_creation_input_tokens": 0, "latency_ms": 2100}
+{"type": "tool.call", "ts": "2026-09-20T09:00:06Z", "harness_seq": 9, "tool": "grep", "input": "pattern=Cache", "tool_call_id": "call_002"}
+{"type": "tool.result", "ts": "2026-09-20T09:00:06.210000Z", "harness_seq": 10, "tool": "grep", "output": "3 matches in internal/cache/cache.go", "duration_ms": 210, "tool_call_id": "call_002", "retries_attempted": 0}
+{"type": "task.completed", "ts": "2026-09-20T09:00:07Z", "harness_seq": 11, "status": "completed"}

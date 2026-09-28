@@ -1,0 +1,62 @@
+[
+  {
+    "id": "sess-quick-lookup",
+    "status": "completed",
+    "started_at": "2026-09-20T09:00:00Z",
+    "duration_ms": 7000,
+    "input_tokens": 1510,
+    "output_tokens": 105,
+    "cache_read_input_tokens": 0,
+    "event_count": 11
+  },
+  {
+    "id": "sess-cache-heavy",
+    "status": "completed",
+    "started_at": "2026-09-20T09:08:20Z",
+    "duration_ms": 24000,
+    "input_tokens": 8400,
+    "output_tokens": 540,
+    "cache_read_input_tokens": 8310,
+    "event_count": 31
+  },
+  {
+    "id": "sess-stuck-kubectl",
+    "status": "failed",
+    "started_at": "2026-09-20T09:20:00Z",
+    "duration_ms": 39000,
+    "input_tokens": 5100,
+    "output_tokens": 300,
+    "cache_read_input_tokens": 0,
+    "event_count": 36
+  },
+  {
+    "id": "sess-stuck-grep",
+    "status": "failed",
+    "started_at": "2026-09-20T09:40:00Z",
+    "duration_ms": 26900,
+    "input_tokens": 3560,
+    "output_tokens": 276,
+    "cache_read_input_tokens": 0,
+    "event_count": 29
+  },
+  {
+    "id": "sess-slow-report",
+    "status": "completed",
+    "started_at": "2026-09-20T10:00:00Z",
+    "duration_ms": 544000,
+    "input_tokens": 9640,
+    "output_tokens": 3600,
+    "cache_read_input_tokens": 0,
+    "event_count": 41
+  },
+  {
+    "id": "sess-truncated",
+    "status": "unknown",
+    "started_at": "2026-09-20T10:15:00Z",
+    "duration_ms": 6900,
+    "input_tokens": 1000,
+    "output_tokens": 80,
+    "cache_read_input_tokens": 0,
+    "event_count": 10
+  }
+]

@@ -1,0 +1,350 @@
+{
+  "summary": {
+    "id": "sess-stuck-kubectl",
+    "status": "failed",
+    "started_at": "2026-09-20T09:20:00Z",
+    "duration_ms": 39000,
+    "input_tokens": 5100,
+    "output_tokens": 300,
+    "cache_read_input_tokens": 0,
+    "event_count": 36
+  },
+  "events": [
+    {
+      "type": "llm.request.started",
+      "ts": "2026-09-20T09:20:00Z",
+      "harness_seq": 1,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true
+    },
+    {
+      "type": "llm.request.completed",
+      "ts": "2026-09-20T09:20:03.600000Z",
+      "harness_seq": 2,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true,
+      "latency_ms": 3600,
+      "retries_attempted": 0
+    },
+    {
+      "type": "llm.usage",
+      "ts": "2026-09-20T09:20:03.601000Z",
+      "harness_seq": 3,
+      "model": "claude-sonnet-4-6",
+      "input_tokens": 820,
+      "output_tokens": 58,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "latency_ms": 3600
+    },
+    {
+      "type": "tool.call",
+      "ts": "2026-09-20T09:20:04Z",
+      "harness_seq": 4,
+      "tool": "exec_cli",
+      "input": "kubectl get pods -n billing",
+      "tool_call_id": "call_200"
+    },
+    {
+      "type": "tool.result",
+      "ts": "2026-09-20T09:20:05.900000Z",
+      "harness_seq": 5,
+      "tool": "exec_cli",
+      "output": "billing-worker-5c7f2d-mq8j1  0/1  CrashLoopBackOff  22",
+      "duration_ms": 1900,
+      "tool_call_id": "call_200",
+      "retries_attempted": 0
+    },
+    {
+      "type": "llm.request.started",
+      "ts": "2026-09-20T09:20:06.500000Z",
+      "harness_seq": 6,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true
+    },
+    {
+      "type": "llm.request.completed",
+      "ts": "2026-09-20T09:20:08.700000Z",
+      "harness_seq": 7,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true,
+      "latency_ms": 2200,
+      "retries_attempted": 0
+    },
+    {
+      "type": "llm.usage",
+      "ts": "2026-09-20T09:20:08.701000Z",
+      "harness_seq": 8,
+      "model": "claude-sonnet-4-6",
+      "input_tokens": 880,
+      "output_tokens": 52,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "latency_ms": 2200
+    },
+    {
+      "type": "tool.call",
+      "ts": "2026-09-20T09:20:09.500000Z",
+      "harness_seq": 9,
+      "tool": "exec_cli",
+      "input": "kubectl describe pod billing-worker-5c7f2d-mq8j1 -n billing",
+      "tool_call_id": "call_201"
+    },
+    {
+      "type": "tool.result",
+      "ts": "2026-09-20T09:20:11.100000Z",
+      "harness_seq": 10,
+      "tool": "exec_cli",
+      "output": "Last State: Terminated, Reason: Error, Exit Code: 1",
+      "duration_ms": 1600,
+      "tool_call_id": "call_201",
+      "retries_attempted": 0
+    },
+    {
+      "type": "llm.request.started",
+      "ts": "2026-09-20T09:20:11.500000Z",
+      "harness_seq": 11,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true
+    },
+    {
+      "type": "llm.request.completed",
+      "ts": "2026-09-20T09:20:13.250000Z",
+      "harness_seq": 12,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true,
+      "latency_ms": 1750,
+      "retries_attempted": 0
+    },
+    {
+      "type": "llm.usage",
+      "ts": "2026-09-20T09:20:13.251000Z",
+      "harness_seq": 13,
+      "model": "claude-sonnet-4-6",
+      "input_tokens": 660,
+      "output_tokens": 38,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "latency_ms": 1750
+    },
+    {
+      "type": "tool.call",
+      "ts": "2026-09-20T09:20:14Z",
+      "harness_seq": 14,
+      "tool": "exec_cli",
+      "input": "kubectl logs billing-worker-5c7f2d-mq8j1 -n billing --previous --tail=2000",
+      "tool_call_id": "call_210"
+    },
+    {
+      "type": "tool.result",
+      "ts": "2026-09-20T09:20:29.700000Z",
+      "harness_seq": 15,
+      "tool": "exec_cli",
+      "output": "Connecting to queue broker at broker.billing.internal:5672\nSubscribed to invoice.settle, 3 consumers active\nDeserializing message batch (batch_size=640)\npanic: unmarshal invoice.settle: unexpected field \"currency_v2\"",
+      "duration_ms": 15700,
+      "tool_call_id": "call_210",
+      "retries_attempted": 0
+    },
+    {
+      "type": "llm.request.started",
+      "ts": "2026-09-20T09:20:17Z",
+      "harness_seq": 16,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true
+    },
+    {
+      "type": "llm.request.completed",
+      "ts": "2026-09-20T09:20:18.750000Z",
+      "harness_seq": 17,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true,
+      "latency_ms": 1750,
+      "retries_attempted": 0
+    },
+    {
+      "type": "llm.usage",
+      "ts": "2026-09-20T09:20:18.751000Z",
+      "harness_seq": 18,
+      "model": "claude-sonnet-4-6",
+      "input_tokens": 670,
+      "output_tokens": 38,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "latency_ms": 1750
+    },
+    {
+      "type": "tool.call",
+      "ts": "2026-09-20T09:20:19.500000Z",
+      "harness_seq": 19,
+      "tool": "exec_cli",
+      "input": "kubectl logs billing-worker-5c7f2d-mq8j1 -n billing --previous --tail=2000",
+      "tool_call_id": "call_211"
+    },
+    {
+      "type": "tool.result",
+      "ts": "2026-09-20T09:20:35.200000Z",
+      "harness_seq": 20,
+      "tool": "exec_cli",
+      "output": "Connecting to queue broker at broker.billing.internal:5672\nSubscribed to invoice.settle, 3 consumers active\nDeserializing message batch (batch_size=640)\npanic: unmarshal invoice.settle: unexpected field \"currency_v2\"",
+      "duration_ms": 15700,
+      "tool_call_id": "call_211",
+      "retries_attempted": 0
+    },
+    {
+      "type": "llm.request.started",
+      "ts": "2026-09-20T09:20:22.500000Z",
+      "harness_seq": 21,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true
+    },
+    {
+      "type": "llm.request.completed",
+      "ts": "2026-09-20T09:20:24.250000Z",
+      "harness_seq": 22,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true,
+      "latency_ms": 1750,
+      "retries_attempted": 0
+    },
+    {
+      "type": "llm.usage",
+      "ts": "2026-09-20T09:20:24.251000Z",
+      "harness_seq": 23,
+      "model": "claude-sonnet-4-6",
+      "input_tokens": 680,
+      "output_tokens": 38,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "latency_ms": 1750
+    },
+    {
+      "type": "tool.call",
+      "ts": "2026-09-20T09:20:25Z",
+      "harness_seq": 24,
+      "tool": "exec_cli",
+      "input": "kubectl logs billing-worker-5c7f2d-mq8j1 -n billing --previous --tail=2000",
+      "tool_call_id": "call_212"
+    },
+    {
+      "type": "tool.result",
+      "ts": "2026-09-20T09:20:40.700000Z",
+      "harness_seq": 25,
+      "tool": "exec_cli",
+      "output": "Connecting to queue broker at broker.billing.internal:5672\nSubscribed to invoice.settle, 3 consumers active\nDeserializing message batch (batch_size=640)\npanic: unmarshal invoice.settle: unexpected field \"currency_v2\"",
+      "duration_ms": 15700,
+      "tool_call_id": "call_212",
+      "retries_attempted": 0
+    },
+    {
+      "type": "llm.request.started",
+      "ts": "2026-09-20T09:20:28Z",
+      "harness_seq": 26,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true
+    },
+    {
+      "type": "llm.request.completed",
+      "ts": "2026-09-20T09:20:29.750000Z",
+      "harness_seq": 27,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true,
+      "latency_ms": 1750,
+      "retries_attempted": 0
+    },
+    {
+      "type": "llm.usage",
+      "ts": "2026-09-20T09:20:29.751000Z",
+      "harness_seq": 28,
+      "model": "claude-sonnet-4-6",
+      "input_tokens": 690,
+      "output_tokens": 38,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "latency_ms": 1750
+    },
+    {
+      "type": "tool.call",
+      "ts": "2026-09-20T09:20:30.500000Z",
+      "harness_seq": 29,
+      "tool": "exec_cli",
+      "input": "kubectl logs billing-worker-5c7f2d-mq8j1 -n billing --previous --tail=2000",
+      "tool_call_id": "call_213"
+    },
+    {
+      "type": "tool.result",
+      "ts": "2026-09-20T09:20:46.200000Z",
+      "harness_seq": 30,
+      "tool": "exec_cli",
+      "output": "Connecting to queue broker at broker.billing.internal:5672\nSubscribed to invoice.settle, 3 consumers active\nDeserializing message batch (batch_size=640)\npanic: unmarshal invoice.settle: unexpected field \"currency_v2\"",
+      "duration_ms": 15700,
+      "tool_call_id": "call_213",
+      "retries_attempted": 0
+    },
+    {
+      "type": "llm.request.started",
+      "ts": "2026-09-20T09:20:33.500000Z",
+      "harness_seq": 31,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true
+    },
+    {
+      "type": "llm.request.completed",
+      "ts": "2026-09-20T09:20:35.250000Z",
+      "harness_seq": 32,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true,
+      "latency_ms": 1750,
+      "retries_attempted": 0
+    },
+    {
+      "type": "llm.usage",
+      "ts": "2026-09-20T09:20:35.251000Z",
+      "harness_seq": 33,
+      "model": "claude-sonnet-4-6",
+      "input_tokens": 700,
+      "output_tokens": 38,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "latency_ms": 1750
+    },
+    {
+      "type": "tool.call",
+      "ts": "2026-09-20T09:20:36Z",
+      "harness_seq": 34,
+      "tool": "exec_cli",
+      "input": "kubectl logs billing-worker-5c7f2d-mq8j1 -n billing --previous --tail=2000",
+      "tool_call_id": "call_214"
+    },
+    {
+      "type": "tool.result",
+      "ts": "2026-09-20T09:20:51.700000Z",
+      "harness_seq": 35,
+      "tool": "exec_cli",
+      "output": "Connecting to queue broker at broker.billing.internal:5672\nSubscribed to invoice.settle, 3 consumers active\nDeserializing message batch (batch_size=640)\npanic: unmarshal invoice.settle: unexpected field \"currency_v2\"",
+      "duration_ms": 15700,
+      "tool_call_id": "call_214",
+      "retries_attempted": 0
+    },
+    {
+      "type": "task.failed",
+      "ts": "2026-09-20T09:20:39Z",
+      "harness_seq": 36,
+      "status": "failed",
+      "message": "session runtime exceeded maximum wall-clock limit (15m0s)"
+    }
+  ]
+}
