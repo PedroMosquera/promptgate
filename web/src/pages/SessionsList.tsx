@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { listSessions } from "../api/sessions";
 import { sessionCostFlat } from "../lib/cost";
 import { formatDuration, formatTimestamp } from "../lib/format";
@@ -10,6 +10,8 @@ export default function SessionsList() {
   const [sessions, setSessions] = useState<SessionSummary[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
+  const location = useLocation();
+  const activeId = location.pathname.match(/^\/sessions\/(.+)$/)?.[1];
 
   useEffect(() => {
     listSessions().then(setSessions).catch((e) => setError(String(e)));
@@ -35,7 +37,7 @@ export default function SessionsList() {
           {sessions.map((s) => (
             <tr
               key={s.id}
-              className="session-row"
+              className={`session-row${s.id === activeId ? " active" : ""}`}
               onClick={() => navigate(`/sessions/${s.id}`)}
             >
               <td>

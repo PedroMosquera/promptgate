@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import SessionsList from "./pages/SessionsList";
+import ConsoleLayout from "./components/ConsoleLayout";
 import SessionDetail from "./pages/SessionDetail";
 
 export default function App() {
@@ -10,8 +10,10 @@ export default function App() {
         <span className="subtitle">agent session observability</span>
       </header>
       <Routes>
-        <Route path="/" element={<SessionsList />} />
-        <Route path="/sessions/:id" element={<SessionDetail />} />
+        <Route path="/" element={<ConsoleLayout />}>
+          <Route index element={<p className="loading">Select a session.</p>} />
+          <Route path="sessions/:id" element={<SessionDetail />} />
+        </Route>
       </Routes>
     </div>
   );

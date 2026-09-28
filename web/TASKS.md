@@ -36,13 +36,14 @@ They should be the same session's cost. They are not.
 
 ### C. A session that shows someone else's data
 
-1. On `/`, click into `sess-stuck-kubectl`.
-2. Before the page finishes loading, click back, then immediately click into
-   `sess-quick-lookup`.
-3. Watch what renders.
+1. On `/`, click `sess-stuck-kubectl` in the sidebar.
+2. Before it finishes loading, click `sess-quick-lookup` in the same sidebar.
+   Do not go back to an empty list in between, click straight from one row to
+   the other.
+3. Watch what the detail pane ends up showing.
 
-The URL and the page heading say `sess-quick-lookup`. The timeline sometimes
-does not.
+The URL and the sidebar's highlighted row say `sess-quick-lookup`. The
+timeline sometimes does not.
 
 ## Stretch
 

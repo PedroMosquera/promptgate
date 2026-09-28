@@ -59,6 +59,31 @@ a {
   padding: 16px 18px;
 }
 
+.console-layout {
+  display: grid;
+  grid-template-columns: minmax(360px, 420px) 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.console-sidebar {
+  overflow-x: auto;
+}
+
+.console-sidebar .sessions-table {
+  font-size: 0.8rem;
+}
+
+.console-sidebar .sessions-table th,
+.console-sidebar .sessions-table td {
+  padding: 6px 8px;
+  white-space: nowrap;
+}
+
+.console-detail {
+  min-width: 0;
+}
+
 .sessions-table {
   width: 100%;
   border-collapse: collapse;
@@ -87,6 +112,11 @@ a {
 
 .sessions-table tr.session-row:hover {
   background: #1c2032;
+}
+
+.sessions-table tr.session-row.active {
+  background: #1b2440;
+  box-shadow: inset 2px 0 0 var(--accent);
 }
 
 .status-badge {
