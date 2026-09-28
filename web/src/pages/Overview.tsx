@@ -21,24 +21,26 @@ export default function Overview() {
   return (
     <div
       style={{
-        background: "#f4f5f7",
-        borderRadius: "8px",
-        padding: "24px",
-        boxShadow: "0 2px 6px rgba(0, 0, 0, 0.15)",
+        background: "linear-gradient(135deg, #f5ede4 0%, #ead9c4 100%)",
+        borderRadius: "16px",
+        padding: "28px",
+        boxShadow: "0 8px 20px rgba(180, 120, 80, 0.25)",
         fontFamily: "system-ui, sans-serif",
-        color: "#1a1a1a",
+        color: "#3d2b1f",
       }}
     >
-      <h2 style={{ fontSize: "1.3rem", marginTop: 0 }}>Analytics Overview</h2>
-      <p style={{ color: "#555" }}>
+      <h2 style={{ fontSize: "1.4rem", marginTop: 0 }}>
+        📊 Analytics Overview
+      </h2>
+      <p style={{ color: "#6b5744" }}>
         Select a session on the left to dive in, or check out the cost
-        breakdown below.
+        breakdown below! ✨
       </p>
       <div
         style={{
-          background: "#ffffff",
-          border: "1px solid #ddd",
-          borderRadius: "6px",
+          background: "#fffaf3",
+          border: "1px solid #e8d5bd",
+          borderRadius: "12px",
           padding: "20px",
           marginTop: "16px",
         }}
@@ -58,8 +60,8 @@ export default function Overview() {
             </div>
             <div
               style={{
-                background: "#e5e7eb",
-                borderRadius: "4px",
+                background: "#eaddca",
+                borderRadius: "999px",
                 height: "10px",
                 overflow: "hidden",
               }}
@@ -68,8 +70,8 @@ export default function Overview() {
                 style={{
                   width: `${(cost / maxCost) * 100}%`,
                   height: "100%",
-                  background: "#3b82f6",
-                  borderRadius: "4px",
+                  background: "#d97757",
+                  borderRadius: "999px",
                 }}
               />
             </div>
