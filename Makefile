@@ -1,4 +1,4 @@
-.PHONY: run build test test-race vet
+.PHONY: run build test test-race vet web-install web-dev web-test web-build
 
 run:
 	go run ./cmd/promptgate
@@ -14,3 +14,15 @@ test-race:
 
 vet:
 	go vet ./...
+
+web-install:
+	cd web && npm ci
+
+web-dev:
+	cd web && npm run dev
+
+web-test:
+	cd web && npm test
+
+web-build:
+	cd web && npm run build

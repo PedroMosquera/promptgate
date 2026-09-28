@@ -9,6 +9,11 @@ The backend is mocked, so the service runs with no API keys and costs nothing.
 Swapping in a real provider means implementing a single interface in
 `internal/llm`.
 
+Alongside the gateway sits `web/`, a React console for the agent sessions that
+call services like this one: a list of sessions, a per-session event timeline,
+and cost and duration figures computed from the same trace data. It reads its
+fixtures from `fixtures/sessions/` and runs independently of the Go service.
+
 ## Running it
 
 ```
@@ -59,10 +64,12 @@ internal/gateway    HTTP handlers and routing
 internal/llm        model-backend interface, mock, retry wrapper
 internal/cache      in-memory response cache
 internal/ratelimit  per-key token bucket
+fixtures/sessions   agent session traces, shared by the web console
+web/                React console over those traces
 ```
 
 ## Working on this
 
-`TASKS.md` describes what we would like you to look at. `AGENTS.md` has notes for
-coding assistants. Use an AI agent or don't, whichever matches how you work, and
-be ready to walk through your reasoning and your changes.
+`CHALLENGES.md` routes you to the track you were invited to work on. `AGENTS.md`
+has notes for coding assistants. Use an AI agent or don't, whichever matches how
+you work, and be ready to walk through your reasoning and your changes.
