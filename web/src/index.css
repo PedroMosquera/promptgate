@@ -1,0 +1,243 @@
+:root {
+  color-scheme: dark;
+  --bg: #0f1117;
+  --panel: #161925;
+  --panel-border: #262b3d;
+  --text: #e4e6ef;
+  --text-dim: #8b8fa3;
+  --accent: #5b8cff;
+  --ok: #3ecf8e;
+  --fail: #ff6b6b;
+  --unknown: #d4a72c;
+  --mono: "SF Mono", "Fira Code", "Cascadia Code", Consolas, monospace;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-shell {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+.app-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.app-header h1 {
+  font-size: 1.1rem;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.app-header .subtitle {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  padding: 16px 18px;
+}
+
+.sessions-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.sessions-table th {
+  text-align: left;
+  color: var(--text-dim);
+  font-weight: 500;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.sessions-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.sessions-table tr.session-row {
+  cursor: pointer;
+}
+
+.sessions-table tr.session-row:hover {
+  background: #1c2032;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.status-badge.completed {
+  background: rgba(62, 207, 142, 0.15);
+  color: var(--ok);
+}
+
+.status-badge.failed {
+  background: rgba(255, 107, 107, 0.15);
+  color: var(--fail);
+}
+
+.status-badge.unknown {
+  background: rgba(212, 167, 44, 0.15);
+  color: var(--unknown);
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.summary-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.summary-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.summary-stat .label {
+  color: var(--text-dim);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.summary-stat .value {
+  font-size: 1.15rem;
+  font-family: var(--mono);
+}
+
+.timeline-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.timeline-controls select {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+.timeline-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.timeline-row {
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.row-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.85rem;
+  font-family: var(--mono);
+}
+
+.row-head:hover {
+  background: #1c2032;
+}
+
+.row-seq {
+  color: var(--text-dim);
+  width: 32px;
+}
+
+.row-type {
+  flex: 1;
+  color: var(--accent);
+}
+
+.row-ts {
+  color: var(--text-dim);
+}
+
+.row-caret {
+  color: var(--text-dim);
+  width: 16px;
+  text-align: center;
+}
+
+.row-body {
+  margin: 0;
+  padding: 12px 16px;
+  background: #0b0d13;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  border-top: 1px solid var(--panel-border);
+}
+
+.loading,
+.error {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.error {
+  color: var(--fail);
+}
