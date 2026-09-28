@@ -16,7 +16,8 @@ Right now the console shows duration and a timeline. It does not help anyone
 tell "this is slow but working" apart from "this is stuck." We would like the
 console to help with that.
 
-We do not have a fixed idea of what the fix looks like. Whatever you build,
-come prepared to walk through it: what you built, what you decided not to
-build, and what you think would break first if this went in front of
+We do not have a fixed idea of what the fix looks like. A badge, a sort
+order, a chart, whatever gets the point across fastest is fine. Whatever you
+build, come prepared to walk through it: what you built, what you decided
+not to build, and what you think would break first if this went in front of
 support tomorrow.

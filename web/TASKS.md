@@ -49,4 +49,6 @@ timeline sometimes does not.
 
 If you finish the brief with time to spare, pick up a second bug from the
 pool, or look for a second field in the fixtures that the console does not
-yet surface.
+yet surface. The overview panel you see on `/` before selecting a session
+was the first thing that shipped and looks like it: if you have time and an
+eye for it, feel free to bring it in line with the rest of the console.

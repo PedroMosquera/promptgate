@@ -22,9 +22,10 @@ npm run build        # production build
 
 ## Pages
 
-- `/` - the sessions list: status, start time, duration, event count, cost.
+- `/` - the sessions list in a persistent sidebar, plus an analytics
+  overview panel showing cost per session.
 - `/sessions/:id` - a summary panel plus the full event timeline for one
-  session, with a filter by event type.
+  session, with a filter by event type, shown alongside the sidebar.
 
 ## Data
 
