@@ -44,16 +44,16 @@
       "ts": "2026-09-20T09:40:02.500000Z",
       "harness_seq": 4,
       "tool": "grep",
-      "input": "pattern=connection refused, path=/var/log",
+      "input": "pattern=timeout, path=/var/log",
       "tool_call_id": "call_300"
     },
     {
       "type": "tool.result",
-      "ts": "2026-09-20T09:40:03.390000Z",
+      "ts": "2026-09-20T09:40:03.120000Z",
       "harness_seq": 5,
       "tool": "grep",
-      "output": "12 matches across 4 files",
-      "duration_ms": 890,
+      "output": "0 matches",
+      "duration_ms": 620,
       "tool_call_id": "call_300",
       "retries_attempted": 0
     },
