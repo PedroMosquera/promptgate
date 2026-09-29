@@ -28,11 +28,10 @@ web-build:
 	cd web && npm run build
 
 py-install:
-	python3 -m venv python/.venv
-	python/.venv/bin/python3 -m pip install -r python/requirements.txt
+	cd python && pip3 install -r requirements.txt
 
 py-run:
-	cd python && PORT=8081 .venv/bin/python3 server.py
+	cd python && PORT=8081 python3 server.py
 
 py-test:
-	cd python && .venv/bin/python3 -m pytest
+	cd python && python3 -m pytest
