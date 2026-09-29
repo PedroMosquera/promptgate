@@ -9,10 +9,11 @@ The backend is mocked, so the service runs with no API keys and costs nothing.
 Swapping in a real provider means implementing a single interface in
 `internal/llm`.
 
-Alongside the gateway sits `web/`, a React console for the agent sessions that
-call services like this one: a list of sessions, a per-session event timeline,
-and cost and duration figures computed from the same trace data. It reads its
-fixtures from `fixtures/sessions/` and runs independently of the Go service.
+Alongside the gateway sit two more pieces that read the same session traces:
+`web/`, a React console with a list of sessions, a per-session event
+timeline, and cost and duration figures; and `python/`, a small HTTP service
+serving the same summaries. Both read fixtures from `fixtures/sessions/` and
+run independently of the Go service and of each other.
 
 ## Running it
 
@@ -64,8 +65,9 @@ internal/gateway    HTTP handlers and routing
 internal/llm        model-backend interface, mock, retry wrapper
 internal/cache      in-memory response cache
 internal/ratelimit  per-key token bucket
-fixtures/sessions   agent session traces, shared by the web console
+fixtures/sessions   agent session traces, shared by web/ and python/
 web/                React console over those traces
+python/             HTTP service over those traces
 ```
 
 ## Working on this

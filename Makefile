@@ -1,4 +1,4 @@
-.PHONY: run build test test-race vet web-install web-dev web-test web-build
+.PHONY: run build test test-race vet web-install web-dev web-test web-build py-install py-run py-test
 
 run:
 	go run ./cmd/promptgate
@@ -26,3 +26,12 @@ web-test:
 
 web-build:
 	cd web && npm run build
+
+py-install:
+	cd python && pip3 install -r requirements.txt
+
+py-run:
+	cd python && PORT=8081 python3 server.py
+
+py-test:
+	cd python && python3 -m pytest

@@ -1,7 +1,7 @@
 # Challenges
 
-promptgate has two independent tracks. Pick the one that matches the session
-you were invited to, or ask if you are unsure.
+promptgate has three independent tracks. Pick the one that matches the
+session you were invited to, or ask if you are unsure.
 
 ## Go track
 
@@ -22,7 +22,19 @@ make web-dev      # localhost:5173
 
 Tasks are in `web/TASKS.md`. The main piece of work is in `web/BRIEF.md`.
 
+## Python track
+
+`python/`, a small HTTP service over the same agent session traces. Requires
+Python 3.9 or newer.
+
+```
+make py-install
+make py-run       # localhost:8081
+```
+
+Tasks are in `python/TASKS.md`.
+
 ## Shared data
 
-Both tracks read from `fixtures/sessions/`, a set of raw agent session traces
-in NDJSON. Neither track requires the other to be running.
+All three tracks read from `fixtures/sessions/`, a set of raw agent session
+traces in NDJSON. No track requires another to be running.
