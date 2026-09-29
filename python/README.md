@@ -11,17 +11,27 @@ database, no external services.
 ## Running it
 
 ```
-python3 -m pip install -r requirements.txt   # only pytest
-python3 server.py                 # listens on :8081
+python3 -m venv .venv
+.venv/bin/python3 -m pip install -r requirements.txt   # only pytest
+.venv/bin/python3 server.py                            # listens on :8081
+```
+
+A virtual environment avoids `pip`'s "externally managed environment" error
+on systems (Homebrew's Python included) that block installing into the
+system interpreter directly. `make py-install` does the same thing from the
+repo root.
+
+```
+PORT=9000 .venv/bin/python3 server.py       # or pick a port
 ```
 
 ```
-PORT=9000 python3 server.py       # or pick a port
+.venv/bin/python3 -m pytest                 # unit tests
 ```
 
-```
-python3 -m pytest                 # unit tests
-```
+If `python3 -m pytest` already works without any of this (pytest already on
+your machine), you can skip the virtual environment and use `python3`
+directly throughout.
 
 ## Endpoints
 
