@@ -26,9 +26,14 @@ in.
 
 ## 3. A per-session signals endpoint
 
-Add `GET /api/sessions/<id>/signals`. Detect tool calls that repeat with the
-same tool and the same input, and return the repeat count and how much
-duration those repeats added up to. A test is part of the deliverable.
+Add `GET /api/sessions/<id>/signals`. A "repeat" is a run of consecutive
+tool calls that share the same tool and the same input; a run of 4 such
+calls has a repeat count of 4, not 3. For each run of 2 or more, report the
+tool, the input, the repeat count, and the total duration of that run
+(including its first call). The response shape (one object per run, a flat
+list, whatever) is your call, state your reasoning for it. A test is part
+of the deliverable, and should cover a session with no repeats as well as
+one with them.
 
 ## Stretch, only if there is time
 
