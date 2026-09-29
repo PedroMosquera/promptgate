@@ -11,7 +11,7 @@ database, no external services.
 ## Running it
 
 ```
-pip install -r requirements.txt   # only pytest
+python3 -m pip install -r requirements.txt   # only pytest
 python3 server.py                 # listens on :8081
 ```
 

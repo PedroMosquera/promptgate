@@ -28,7 +28,7 @@ web-build:
 	cd web && npm run build
 
 py-install:
-	cd python && pip3 install -r requirements.txt
+	cd python && python3 -m pip install -r requirements.txt
 
 py-run:
 	cd python && PORT=8081 python3 server.py
