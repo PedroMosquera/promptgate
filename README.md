@@ -73,5 +73,6 @@ python/             HTTP service over those traces
 ## Working on this
 
 `CHALLENGES.md` routes you to the track you were invited to work on. `AGENTS.md`
-has notes for coding assistants. Use an AI agent or don't, whichever matches how
-you work, and be ready to walk through your reasoning and your changes.
+has notes for coding assistants, and `.claude/skills/` has short task-oriented
+guides they can load. Use an AI agent or don't, whichever matches how you work,
+and be ready to walk through your reasoning and your changes.
