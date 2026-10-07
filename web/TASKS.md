@@ -1,9 +1,11 @@
 # Tasks (frontend track)
 
 The console works, mostly. Pick one bug below as a warm-up, then spend most of
-your time on `BRIEF.md`. You are not expected to fix every bug or finish the
-brief. Getting cleanly through a warm-up bug and making real, well-reasoned
-progress on the brief is a good outcome.
+your time on the main piece of work: either the brief in `BRIEF.md` or the
+ticket in `TICKET.md`. Your interviewer will tell you which. You are not
+expected to fix every bug or finish the main piece. Getting cleanly through a
+warm-up bug and making real, well-reasoned progress on the main piece is a
+good outcome.
 
 Think out loud as you go. Use whatever tools you normally reach for, including
 AI assistants if that is part of your workflow. Either way, be ready to explain
@@ -45,9 +47,15 @@ They should be the same session's cost. They are not.
 The URL and the sidebar's highlighted row say `sess-quick-lookup`. The
 timeline sometimes does not.
 
+## The ticket
+
+`TICKET.md` was filed by the support lead, who uses the console every day
+and is not an engineer. Your interviewer plays that person. Anything the
+ticket does not settle, ask.
+
 ## Stretch
 
-If you finish the brief with time to spare, pick up a second bug from the
+If you finish the main piece with time to spare, pick up a second bug from the
 pool, or look for a second field in the fixtures that the console does not
 yet surface. The overview panel you see on `/` before selecting a session
 was the first thing that shipped and looks like it: if you have time and an

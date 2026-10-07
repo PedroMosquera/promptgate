@@ -50,6 +50,6 @@ public/api     generated session payloads, source of truth is fixtures/sessions
 
 ## Working on this
 
-`TASKS.md` has a small set of bugs to work through. `BRIEF.md` describes the
-larger piece of work. `HANDOFF.md` is where you leave notes on what you built,
+`TASKS.md` has a small set of bugs to work through. `BRIEF.md` and
+`TICKET.md` each describe a larger piece of work. `HANDOFF.md` is where you leave notes on what you built,
 what you left out, and what you would do next.

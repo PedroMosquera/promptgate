@@ -20,7 +20,8 @@ make web-install
 make web-dev      # localhost:5173
 ```
 
-Tasks are in `web/TASKS.md`. The main piece of work is in `web/BRIEF.md`.
+Tasks are in `web/TASKS.md`. The main piece of work is either `web/BRIEF.md`
+or `web/TICKET.md`; your interviewer will say which.
 
 ## Python track
 
