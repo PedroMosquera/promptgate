@@ -17,3 +17,8 @@ paths:
 - Every load has a visible loading state and a visible error state. Do not
   swallow errors: `.catch(() => {})`, or a catch that quietly substitutes an
   empty list, hides a failure from the person on call.
+- Whenever a page loads or reloads its data, clear what it was showing first
+  (`setData(null)`) so the loading state shows, and if the load fails, show
+  the error in place of the data. Never leave old data on screen next to a
+  loading or error state: the person on call must not read stale data as if
+  it were current.
