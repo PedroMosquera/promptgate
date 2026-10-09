@@ -18,15 +18,14 @@ there if you have time left.
 
 ### A. A row that expands itself
 
-1. Run `npm run dev`, open a session with a mix of event types (for example
-   `sess-stuck-kubectl`).
-2. Expand any row in the timeline by clicking it.
-3. Change the event-type filter to a type that still leaves several rows
-   visible.
-4. Look at the row that ends up in the same position the expanded one was in.
+1. Run `npm run dev` and open `sess-stuck-kubectl`.
+2. Expand row 4, the first `tool.call` (`kubectl get pods -n billing`). Only
+   rows marked `+` have something to show.
+3. Change the event-type filter to `tool.call`.
+4. Look at the fourth row, the position the expanded one was in.
 
-What you should see: a row is expanded that you never clicked, showing a
-different event's output than the one you actually opened.
+What you should see: row 19 is expanded, showing a `kubectl logs` command
+you never opened, and row 4, the one you did open, is closed.
 
 ### B. Two numbers that disagree
 
