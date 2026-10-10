@@ -1,7 +1,7 @@
 // Shapes match the NDJSON event schema in fixtures/sessions/ and the JSON
 // payloads served from web/public/api/.
 
-export type SessionStatus = "completed" | "failed" | "unknown";
+export type SessionStatus = "running" | "completed" | "failed" | "unknown";
 
 export interface SessionSummary {
   id: string;

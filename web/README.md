@@ -6,7 +6,8 @@ sessions and lets you drill into a single session's event timeline, with cost
 and duration computed from the trace data.
 
 Session data ships as static JSON under `public/api/`, generated from the raw
-traces in `../fixtures/sessions/`. There is no backend process to run.
+traces in `../fixtures/sessions/`. A session that is still running has no
+trace yet, so it exists only here. There is no backend process to run.
 
 ## Running it
 

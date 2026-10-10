@@ -6,10 +6,12 @@ description: What the fields in a promptgate session trace mean - event types, o
 # Reading a session trace
 
 A session is one agent run that went through the gateway. The raw trace is
-`fixtures/sessions/<id>.ndjson`, one event per line. The console's payloads
-in `web/public/api/` are generated from those files: `sessions.json` is the
-list of summaries, `sessions/<id>.json` is `{ summary, events }` for one
-session.
+`fixtures/sessions/<id>.ndjson`, one event per line, written once the
+harness disconnects. The console's payloads in `web/public/api/` are
+generated from those files: `sessions.json` is the list of summaries,
+`sessions/<id>.json` is `{ summary, events }` for one session. A session
+that is still running has no trace file yet; its payload is what the
+gateway has received so far.
 
 ## Events
 
@@ -46,10 +48,11 @@ it has neither when the trace was cut off.
 
 ## Summary fields
 
-- `status` - `completed` if there is a `task.completed`, `failed` if there is
-  a `task.failed`, `unknown` if there is neither. `unknown` means the trace
-  has no ending; it does not mean the session succeeded, and it does not mean
-  it is still running.
+- `status` - `running` while the harness is still connected, so events can
+  still arrive. After it disconnects: `completed` if there is a
+  `task.completed`, `failed` if there is a `task.failed`, `unknown` if there
+  is neither. `unknown` means the trace has no ending; it does not mean the
+  session succeeded, and it does not mean it is still running.
 - `started_at` - `ts` of the first event.
 - `duration_ms` - from the first event's `ts` to the last event's `ts`.
 - `input_tokens`, `output_tokens`, `cache_read_input_tokens` - sums over the
@@ -72,3 +75,4 @@ is `input_tokens - cache_read_input_tokens`.
 | `sess-stuck-kubectl`, `sess-stuck-grep` | end in `task.failed` |
 | `sess-slow-report` | long, ends in `task.completed` |
 | `sess-truncated` | no terminal event |
+| `sess-rollout-check` | still `running`, so no trace file yet; its last `tool.call` has no result yet |

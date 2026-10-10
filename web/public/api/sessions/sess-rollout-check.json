@@ -1,0 +1,145 @@
+{
+  "summary": {
+    "id": "sess-rollout-check",
+    "status": "running",
+    "started_at": "2026-09-20T10:30:00Z",
+    "duration_ms": 11000,
+    "input_tokens": 2290,
+    "output_tokens": 144,
+    "cache_read_input_tokens": 0,
+    "event_count": 14
+  },
+  "events": [
+    {
+      "type": "llm.request.started",
+      "ts": "2026-09-20T10:30:00Z",
+      "harness_seq": 1,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true
+    },
+    {
+      "type": "llm.request.completed",
+      "ts": "2026-09-20T10:30:01.400000Z",
+      "harness_seq": 2,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true,
+      "latency_ms": 1400,
+      "retries_attempted": 0
+    },
+    {
+      "type": "llm.usage",
+      "ts": "2026-09-20T10:30:01.401000Z",
+      "harness_seq": 3,
+      "model": "claude-sonnet-4-6",
+      "input_tokens": 620,
+      "output_tokens": 48,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "latency_ms": 1400
+    },
+    {
+      "type": "tool.call",
+      "ts": "2026-09-20T10:30:02Z",
+      "harness_seq": 4,
+      "tool": "exec_cli",
+      "input": "kubectl rollout status deploy/checkout -n shop --timeout=2s",
+      "tool_call_id": "call_600"
+    },
+    {
+      "type": "tool.result",
+      "ts": "2026-09-20T10:30:04.100000Z",
+      "harness_seq": 5,
+      "tool": "exec_cli",
+      "output": "Waiting for deployment \"checkout\" rollout to finish: 2 of 4 updated replicas are available...\nerror: timed out waiting for the condition",
+      "duration_ms": 2100,
+      "tool_call_id": "call_600",
+      "retries_attempted": 0
+    },
+    {
+      "type": "llm.request.started",
+      "ts": "2026-09-20T10:30:05Z",
+      "harness_seq": 6,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true
+    },
+    {
+      "type": "llm.request.completed",
+      "ts": "2026-09-20T10:30:06.700000Z",
+      "harness_seq": 7,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true,
+      "latency_ms": 1700,
+      "retries_attempted": 0
+    },
+    {
+      "type": "llm.usage",
+      "ts": "2026-09-20T10:30:06.701000Z",
+      "harness_seq": 8,
+      "model": "claude-sonnet-4-6",
+      "input_tokens": 760,
+      "output_tokens": 52,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "latency_ms": 1700
+    },
+    {
+      "type": "tool.call",
+      "ts": "2026-09-20T10:30:07Z",
+      "harness_seq": 9,
+      "tool": "exec_cli",
+      "input": "kubectl get pods -n shop -l app=checkout",
+      "tool_call_id": "call_601"
+    },
+    {
+      "type": "tool.result",
+      "ts": "2026-09-20T10:30:07.800000Z",
+      "harness_seq": 10,
+      "tool": "exec_cli",
+      "output": "checkout-7d9f6c-2xkqd  1/1  Running            0\ncheckout-7d9f6c-8mztp  1/1  Running            0\ncheckout-7d9f6c-c4nwl  0/1  ContainerCreating  0\ncheckout-7d9f6c-p6rdv  0/1  ContainerCreating  0",
+      "duration_ms": 800,
+      "tool_call_id": "call_601",
+      "retries_attempted": 0
+    },
+    {
+      "type": "llm.request.started",
+      "ts": "2026-09-20T10:30:09Z",
+      "harness_seq": 11,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true
+    },
+    {
+      "type": "llm.request.completed",
+      "ts": "2026-09-20T10:30:10.500000Z",
+      "harness_seq": 12,
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-6",
+      "is_stream": true,
+      "latency_ms": 1500,
+      "retries_attempted": 0
+    },
+    {
+      "type": "llm.usage",
+      "ts": "2026-09-20T10:30:10.501000Z",
+      "harness_seq": 13,
+      "model": "claude-sonnet-4-6",
+      "input_tokens": 910,
+      "output_tokens": 44,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "latency_ms": 1500
+    },
+    {
+      "type": "tool.call",
+      "ts": "2026-09-20T10:30:11Z",
+      "harness_seq": 14,
+      "tool": "exec_cli",
+      "input": "kubectl rollout status deploy/checkout -n shop --timeout=120s",
+      "tool_call_id": "call_602"
+    }
+  ]
+}

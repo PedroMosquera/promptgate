@@ -129,6 +129,11 @@ a {
   letter-spacing: 0.03em;
 }
 
+.status-badge.running {
+  background: rgba(91, 140, 255, 0.15);
+  color: var(--accent);
+}
+
 .status-badge.completed {
   background: rgba(62, 207, 142, 0.15);
   color: var(--ok);
