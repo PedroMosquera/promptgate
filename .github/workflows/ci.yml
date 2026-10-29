@@ -53,6 +53,6 @@ jobs:
         with:
           python-version: "3.14"
       - name: install
-        run: pip install --only-binary=:all: -r requirements.txt
+        run: "pip install --only-binary=:all: -r requirements.txt"
       - name: collect tests
         run: python -m pytest --collect-only -q
