@@ -9,7 +9,7 @@ A React console over agent session traces, in `web/`.
 
 ## First steps
 
-1. `npm ci`, then `npm test` to confirm a clean baseline.
+1. From `web/`, `npm ci`, then `npm test` to confirm a clean baseline.
 2. `npm run dev`, open `localhost:5173`, click through both pages.
 3. Read `web/README.md` for the pages and the data, and `web/AGENTS.md` for
    commands, layout, and the definition of done.
@@ -31,11 +31,11 @@ tests, load `frontend-testing`.
 
 ## A method that works
 
-Reproduce first. Several of the bugs in `TASKS.md` only show up after a
+Reproduce first. Several of the bugs in `web/TASKS.md` only show up after a
 specific sequence of clicks, not from reading the code alone. Get the
 symptom on screen before you go looking for the cause, and check the fix the
 same way you found the bug.
 
 ## Next
 
-`TASKS.md` has the bug pool and points at the larger piece of work.
+`web/TASKS.md` has the bug pool and points at the larger piece of work.

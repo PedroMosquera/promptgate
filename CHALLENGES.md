@@ -1,41 +1,57 @@
 # Challenges
 
-promptgate has three independent tracks. Pick the one that matches the
-session you were invited to, or ask if you are unsure.
+Find your role below and work in the folder it names. Your interviewer will
+confirm which one at the start. If you are unsure, ask.
 
-## Go track
+| Role | Folder | Tasks |
+|---|---|---|
+| Backend, Go | `go/` | `go/TASKS.md` |
+| Backend, Python | `python/` | `python/TASKS.md` |
+| Frontend, React | `web/` | `web/TASKS.md` |
+| Agent engineering | `go/`, then `agents/` | `go/TASKS.md`, then `agents/TASKS.md` |
 
-The gateway itself: `cmd/`, `internal/`. Requires Go 1.24 or newer, nothing
-else. Start with `make test`.
+When you finish, or when time is up, fill in `HANDOFF.md` at the root.
 
-Tasks are in `TASKS.md`.
+## Backend, Go
 
-## Frontend track
+The gateway in `go/`. Requires Go 1.26.10 or newer, nothing else. From the
+repo root:
 
-`web/`, a React console that reads the same agent session traces the gateway
-would produce in production. Requires Node 18 or newer.
+```
+make go-test       # or: cd go && go test ./...
+```
+
+## Backend, Python
+
+The scoring service in `python/`. Requires Python 3.9 or newer.
+
+```
+make py-install    # creates python/.venv and installs pytest into it
+make py-test
+make py-run        # localhost:8081
+```
+
+## Frontend, React
+
+The console in `web/`. Requires Node 18 or newer.
 
 ```
 make web-install
-make web-dev      # localhost:5173
+make web-dev       # localhost:5173
+make web-test
 ```
 
-Tasks are in `web/TASKS.md`. The main piece of work is either `web/BRIEF.md`
-or `web/TICKET.md`; your interviewer will say which.
+Your interviewer will tell you which piece of work in `web/TASKS.md` is your
+main one.
 
-## Python track
+## Agent engineering
 
-`python/`, a small HTTP service over the same agent session traces. Requires
-Python 3.9 or newer.
-
-```
-make py-install
-make py-run       # localhost:8081
-```
-
-Tasks are in `python/TASKS.md`.
+Start with the Go gateway, then move to the recorded agent session in
+`agents/`. Your interviewer will tell you when to switch. `agents/` needs
+nothing installed: it is a trace to read and reason about. Start with
+`agents/README.md`.
 
 ## Shared data
 
-All three tracks read from `fixtures/sessions/`, a set of raw agent session
-traces in NDJSON. No track requires another to be running.
+`fixtures/sessions/` holds raw agent session traces, one JSON event per line.
+`python/` and `web/` both read them. Do not edit them to make a change work.

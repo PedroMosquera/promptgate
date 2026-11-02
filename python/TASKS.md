@@ -10,9 +10,10 @@ explain the code you end up with as if you had written it yourself.
 
 ## 1. A failing test
 
-`python3 -m pytest` has one failing test. Start there. Understand what it is
-telling you, find the cause, and make it pass. A clear explanation of the
-root cause is worth as much as the fix.
+`make py-test` (or `.venv/bin/python -m pytest` from `python/`) has one
+failing test. Start there. Understand what it is telling you, find the cause,
+and make it pass. A clear explanation of the root cause is worth as much as
+the fix.
 
 ## 2. Every session says it succeeded
 

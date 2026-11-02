@@ -10,27 +10,26 @@ database, no external services.
 
 ## Running it
 
-```
-pip install -r requirements.txt   # only pytest
-python3 server.py                 # listens on :8081
-```
+Requires Python 3.9 or newer. From the repo root, the `py-` targets in the
+`Makefile` set up a virtual environment in `python/.venv` and use it:
 
 ```
-PORT=9000 python3 server.py       # or pick a port
+make py-install    # python3 -m venv python/.venv, then installs pytest
+make py-test       # unit tests
+make py-run        # listens on :8081
 ```
 
-```
-python3 -m pytest                 # unit tests
-```
-
-If `pip install` fails with an "externally managed environment" error
-(common on Homebrew's Python), use a virtual environment instead:
+Or by hand, from `python/`:
 
 ```
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
-.venv/bin/python3 server.py
+.venv/bin/python -m pytest
+PORT=8081 .venv/bin/python server.py
 ```
+
+The virtual environment also avoids pip's "externally managed environment"
+error on Homebrew's Python.
 
 ## Endpoints
 
@@ -61,5 +60,6 @@ tests/        pytest suite
 
 ## Working on this
 
-`TASKS.md` has the tasks. `../fixtures/sessions/` is the data, shared with
-the frontend track; nothing here depends on that track running.
+`TASKS.md` has the tasks. `AGENTS.md` has notes for coding assistants.
+`../fixtures/sessions/` is the data, shared with the frontend track; nothing
+here depends on that track running.

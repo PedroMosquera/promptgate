@@ -1,9 +1,11 @@
 ---
-name: debugging
-description: How to reproduce, observe, and diagnose problems in promptgate - running targeted tests, the race detector, and exercising the running server with curl. Use when investigating a failing test or unexpected runtime behavior.
+name: go-debugging
+description: How to reproduce, observe, and diagnose problems in the promptgate Go gateway - running targeted tests, the race detector, and exercising the running server with curl. Use when investigating a failing test or unexpected runtime behavior.
 ---
 
-# Debugging promptgate
+# Debugging the gateway
+
+Run these from `go/`.
 
 ## Run one test, verbosely
 
@@ -26,7 +28,7 @@ that conflicted and the file and line of each access.
 ## Exercise the running server
 
 ```
-make run
+go run ./cmd/promptgate
 curl -i -H 'X-API-Key: demo' -d '{"model":"m","prompt":"p"}' localhost:8080/v1/complete
 ```
 

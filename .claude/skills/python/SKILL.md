@@ -9,10 +9,11 @@ A small HTTP service over agent session traces, in `python/`.
 
 ## First steps
 
-1. `python3 -m pytest` to confirm a baseline. One test fails; that is
-   expected, see `TASKS.md`.
-2. `python3 server.py`, then in another terminal `curl localhost:8081/api/sessions`.
-3. Read `python/README.md` for the endpoints and the pricing model.
+1. From the repo root, `make py-install`, then `make py-test` to confirm a
+   baseline. One test fails; that is expected, see `python/TASKS.md`.
+2. `make py-run`, then in another terminal `curl localhost:8081/api/sessions`.
+3. Read `python/README.md` for the endpoints and the pricing model, and
+   `python/AGENTS.md` for the conventions.
 
 ## Where things live
 
@@ -29,4 +30,4 @@ right.
 
 ## Next
 
-`TASKS.md` lists the work. Do the items in order.
+`python/TASKS.md` lists the work. Do the items in order.

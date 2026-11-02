@@ -1,78 +1,38 @@
 # promptgate
 
-A small HTTP gateway that sits in front of a large language model. A client POSTs
-a prompt, promptgate rate-limits per API key, checks an in-memory cache, and on a
-miss calls the model backend (retrying transient failures) before caching and
-returning the result.
+promptgate is a small LLM gateway plus the tools around it. A client sends a
+prompt, the gateway rate-limits it, checks a cache, and calls a model
+backend. Every agent session that goes through it leaves a trace, and the
+other parts of this repo read those traces.
 
-The backend is mocked, so the service runs with no API keys and costs nothing.
-Swapping in a real provider means implementing a single interface in
-`internal/llm`.
+The model backend is mocked, so nothing here needs an API key, a network
+connection, or money.
 
-Alongside the gateway sit two more pieces that read the same session traces:
-`web/`, a React console with a list of sessions, a per-session event
-timeline, and cost and duration figures; and `python/`, a small HTTP service
-serving the same summaries. Both read fixtures from `fixtures/sessions/` and
-run independently of the Go service and of each other.
+## Where to start
 
-## Running it
+Open `CHALLENGES.md`. It tells you which folder is yours for the session you
+were invited to, and you can ignore the rest of the repo.
 
-```
-make run                 # listens on :8080
-PORT=9000 make run       # or pick a port
-```
+| Folder | What it is | Stack | Start with |
+|---|---|---|---|
+| `go/` | the gateway itself | Go, standard library only | `go/README.md` |
+| `python/` | a scoring service over session traces | Python, standard library plus pytest | `python/README.md` |
+| `web/` | the on-call console over session traces | React, TypeScript, Vite | `web/README.md` |
+| `agents/` | a recorded agent session that went wrong | NDJSON trace, no code | `agents/README.md` |
+| `fixtures/` | session traces shared by `python/` and `web/` | NDJSON | shared, read only |
 
-Send a request:
+Each track folder has its own `README.md` (what it is, how to run it) and
+`TASKS.md` (what to work on). Read the ones in your folder, not the others.
+The tracks do not depend on each other, so none of them needs another one
+running.
 
-```
-curl -s -H 'X-API-Key: demo' \
-  -d '{"model":"gpt-x","prompt":"hello"}' \
-  localhost:8080/v1/complete
-```
+## Files at the root
 
-```
-{"model":"gpt-x","completion":"[gpt-x] 1 word(s): hello","cached":false}
-```
-
-A second identical request comes back with `"cached":true`.
-
-## Endpoints
-
-- `POST /v1/complete` - body `{"model": "...", "prompt": "..."}`, requires an
-  `X-API-Key` header.
-- `GET /healthz` - liveness check.
-
-## Configuration
-
-| Env var        | Default | Meaning                       |
-|----------------|---------|-------------------------------|
-| `PORT`         | 8080    | Port to listen on             |
-| `RATE_PER_SEC` | 5       | Token refill rate per API key |
-| `BURST`        | 10      | Bucket size per API key       |
-
-## Tests
-
-```
-make test         # unit tests
-make test-race    # the same suite under the race detector
-```
-
-## Layout
-
-```
-cmd/promptgate      entrypoint, config, graceful shutdown
-internal/gateway    HTTP handlers and routing
-internal/llm        model-backend interface, mock, retry wrapper
-internal/cache      in-memory response cache
-internal/ratelimit  per-key token bucket
-fixtures/sessions   agent session traces, shared by web/ and python/
-web/                React console over those traces
-python/             HTTP service over those traces
-```
-
-## Working on this
-
-`CHALLENGES.md` routes you to the track you were invited to work on. `AGENTS.md`
-has notes for coding assistants, and `.claude/skills/` has short task-oriented
-guides they can load. Use an AI agent or don't, whichever matches how you work,
-and be ready to walk through your reasoning and your changes.
+- `CHALLENGES.md` - which track is yours, and what each one needs installed.
+- `HANDOFF.md` - a short template to fill in at the end, whatever track you
+  worked on.
+- `AGENTS.md` and `CLAUDE.md` - notes for coding assistants. `AGENTS.md`
+  points each assistant at the notes for its track.
+- `.claude/skills/` and `.claude/rules/` - short guides and conventions that
+  assistants load. They are plain Markdown, so you can read them too.
+- `Makefile` - shortcuts for every track, prefixed `go-`, `py-` and `web-`.

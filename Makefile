@@ -1,19 +1,21 @@
-.PHONY: run build test test-race vet web-install web-dev web-test web-build py-install py-run py-test
+.PHONY: go-run go-build go-test go-test-race go-vet web-install web-dev web-test web-build py-install py-run py-test
 
-run:
-	go run ./cmd/promptgate
+PY := python/.venv/bin/python
 
-build:
-	go build -o bin/promptgate ./cmd/promptgate
+go-run:
+	cd go && go run ./cmd/promptgate
 
-test:
-	go test ./...
+go-build:
+	cd go && go build -o bin/promptgate ./cmd/promptgate
 
-test-race:
-	go test -race ./...
+go-test:
+	cd go && go test ./...
 
-vet:
-	go vet ./...
+go-test-race:
+	cd go && go test -race ./...
+
+go-vet:
+	cd go && go vet ./...
 
 web-install:
 	cd web && npm ci
@@ -28,10 +30,11 @@ web-build:
 	cd web && npm run build
 
 py-install:
-	cd python && pip3 install -r requirements.txt
+	python3 -m venv python/.venv
+	$(PY) -m pip install -r python/requirements.txt
 
 py-run:
-	cd python && PORT=8081 python3 server.py
+	cd python && PORT=8081 .venv/bin/python server.py
 
 py-test:
-	cd python && python3 -m pytest
+	cd python && .venv/bin/python -m pytest
