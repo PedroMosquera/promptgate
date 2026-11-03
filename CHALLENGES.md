@@ -23,7 +23,7 @@ make go-test       # or: cd go && go test ./...
 
 ## Backend, Python
 
-The scoring service in `python/`. Requires Python 3.9 or newer.
+The scoring service in `python/`. Requires Python 3.10 or newer.
 
 ```
 make py-install    # creates python/.venv and installs pytest into it

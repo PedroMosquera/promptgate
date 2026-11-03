@@ -1,6 +1,6 @@
 ---
 name: session-data
-description: What the fields in a promptgate session trace mean - event types, ordering, identity, status, tokens. Use before computing anything from session data in web/ or python/, or when a number on screen looks wrong.
+description: What the fields in a promptgate session trace mean - event types, ordering, identity, status, tokens. Use before computing anything from session data in web/ or agents/, or when a number on screen looks wrong.
 ---
 
 # Reading a session trace

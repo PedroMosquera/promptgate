@@ -15,11 +15,12 @@ failing test. Start there. Understand what it is telling you, find the cause,
 and make it pass. A clear explanation of the root cause is worth as much as
 the fix.
 
-## 2. Every session says it succeeded
+## 2. A session that says it succeeded
 
-`GET /api/sessions` reports every session as `"status": "completed"`.
-Spot-check the raw traces in `fixtures/sessions/` against what the endpoint
-returns for each one. At least one of them did not actually finish.
+`GET /api/sessions` reports four of the six sessions as
+`"status": "completed"`. Spot-check the raw traces in `fixtures/sessions/`
+against what the endpoint returns for each one. At least one of them did not
+actually finish.
 
 Fix the status so it reflects what really happened, and think about whether
 "completed" and "failed" are the only two states a session can honestly be

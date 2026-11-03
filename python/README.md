@@ -10,7 +10,7 @@ database, no external services.
 
 ## Running it
 
-Requires Python 3.9 or newer. From the repo root, the `py-` targets in the
+Requires Python 3.10 or newer. From the repo root, the `py-` targets in the
 `Makefile` set up a virtual environment in `python/.venv` and use it:
 
 ```
