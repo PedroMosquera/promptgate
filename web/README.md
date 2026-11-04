@@ -11,14 +11,17 @@ trace yet, so it exists only here. There is no backend process to run.
 
 ## Running it
 
+Requires Node 18 or newer. Run these from `web/`, or use the `web-` targets
+in the root `Makefile`.
+
 ```
-npm install
+npm ci
 npm run dev        # localhost:5173
 ```
 
 ```
-npm test            # unit tests
-npm run build        # production build
+npm test           # unit tests
+npm run build      # production build
 ```
 
 ## Pages
@@ -52,5 +55,6 @@ public/api     generated session payloads, source of truth is fixtures/sessions
 ## Working on this
 
 `TASKS.md` has a small set of bugs to work through. `BRIEF.md` and
-`TICKET.md` each describe a larger piece of work. `HANDOFF.md` is where you leave notes on what you built,
-what you left out, and what you would do next.
+`TICKET.md` each describe a larger piece of work. `AGENTS.md` has notes for
+coding assistants. `../HANDOFF.md` is where you leave notes on what you
+built, what you left out, and what you would do next.

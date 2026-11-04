@@ -2,10 +2,10 @@
 
 The console works, mostly. Pick one bug below as a warm-up, then spend most of
 your time on the main piece of work: either the brief in `BRIEF.md` or the
-ticket in `TICKET.md`. Your interviewer will tell you which. You are not
-expected to fix every bug or finish the main piece. Getting cleanly through a
-warm-up bug and making real, well-reasoned progress on the main piece is a
-good outcome.
+ticket in `TICKET.md`. Your interviewer will tell you which, and when to do the
+UI polish below. You are not expected to fix every bug or finish the main
+piece. Getting cleanly through a warm-up bug and making real, well-reasoned
+progress on the main piece is a good outcome.
 
 Think out loud as you go. Use whatever tools you normally reach for, including
 AI assistants if that is part of your workflow. Either way, be ready to explain
@@ -52,10 +52,16 @@ timeline sometimes does not.
 and is not an engineer. Your interviewer plays that person. Anything the
 ticket does not settle, ask.
 
+## UI polish
+
+Support keeps this console open for hours, so how it looks matters as much as
+what it shows. Click through it the way they would and look for anything that
+is visually off: misaligned, cut off, or not looking like part of the same
+app. Fix the ones you think matter most. Be ready to say what you found, what
+you fixed, what you left, and why.
+
 ## Stretch
 
 If you finish the main piece with time to spare, pick up a second bug from the
 pool, or look for a second field in the fixtures that the console does not
-yet surface. The overview panel you see on `/` before selecting a session
-was the first thing that shipped and looks like it: if you have time and an
-eye for it, feel free to bring it in line with the rest of the console.
+yet surface.

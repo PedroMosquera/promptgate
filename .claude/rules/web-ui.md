@@ -7,8 +7,7 @@ paths:
 
 - Styling is plain CSS in `src/index.css`, using the custom properties
   defined in `:root` (`--panel`, `--text-dim`, `--ok`, `--fail`,
-  `--unknown`, ...). No inline `style` props, no CSS-in-JS, no UI kit. The
-  overview panel is the one place that breaks this and is due for cleanup.
+  `--unknown`, ...). No inline `style` props, no CSS-in-JS, no UI kit.
 - One component per file, default export, named after the file.
 - Interactive elements are real `button`s and `a`s, never a clickable `div`.
   Anything that expands or collapses carries `aria-expanded`.

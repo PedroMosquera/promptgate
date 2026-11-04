@@ -3,9 +3,6 @@ import { listSessions } from "../api/sessions";
 import { sessionCostFlat } from "../lib/cost";
 import type { SessionSummary } from "../types";
 
-// Deliberately unstyled compared to the rest of the console: this is the
-// first thing we shipped to answer "can we see cost at a glance", and it
-// shows. Whoever picks this up next should make it match.
 export default function Overview() {
   const [sessions, setSessions] = useState<SessionSummary[] | null>(null);
 

@@ -38,4 +38,5 @@ same way you found the bug.
 
 ## Next
 
-`web/TASKS.md` has the bug pool and points at the larger piece of work.
+`web/TASKS.md` has the bug pool, the UI polish task, and points at the larger
+piece of work.
