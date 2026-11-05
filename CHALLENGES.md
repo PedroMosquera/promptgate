@@ -10,6 +10,11 @@ confirm which one at the start. If you are unsure, ask.
 | Frontend, React | `web/` | `web/TASKS.md` |
 | Agent engineering | `go/`, then `agents/` | `go/TASKS.md`, then `agents/TASKS.md` |
 
+Use any tool you like, AI agents included. We know a paid AI tool can be an
+extra cost for you, so feel free not to use one: it does not count against
+you. If you do use one, it helps us see how you work with AI agents in your
+day-to-day development.
+
 When you finish, or when time is up, fill in `HANDOFF.md` at the root.
 
 ## Backend, Go

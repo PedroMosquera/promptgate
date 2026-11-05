@@ -36,3 +36,11 @@ running.
 - `.claude/skills/` and `.claude/rules/` - short guides and conventions that
   assistants load. They are plain Markdown, so you can read them too.
 - `Makefile` - shortcuts for every track, prefixed `go-`, `py-` and `web-`.
+
+## Tools and AI assistants
+
+Use any tool you like during the challenge, AI agents included. We know a
+paid AI tool can be an extra cost for you, so feel free not to use one: it
+does not count against you. If you do use one, it helps us see how you work
+with AI agents in your day-to-day development. Either way, be ready to walk
+through your reasoning and every change you made.
